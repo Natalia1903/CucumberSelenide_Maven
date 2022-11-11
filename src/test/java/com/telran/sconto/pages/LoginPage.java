@@ -26,6 +26,9 @@ public class LoginPage {
         $(emailInput).setValue(validEmail);
         $(passwordInput).setValue(validPassword);
     }
+
+    private static By passwordErrorLocatorMessageLocator = By.id("loginEmail-error");
+
     public SelenideElement loginPageHeaderDisplayed() {
         return $(loginHeader);
 
@@ -33,5 +36,15 @@ public class LoginPage {
 
     public void clickOnLoginSubmitButton() {
         $(submitButton).click();
+    }
+
+    public void invalidLoginInput(String email,String password) {
+        $(emailInput).setValue(email);
+        $(passwordInput).setValue(password);
+
+    }
+
+    public SelenideElement passwordErrorMessage() {
+        return $(passwordErrorLocatorMessageLocator);
     }
 }

@@ -12,9 +12,9 @@ public class HomePage {
     private static By acceptButton = By.cssSelector("[data-accept-action='all']");
 
     public void acceptCookies() {
-        $(acceptButton).click();
+       $(acceptButton).click();
     }
-    private static By myAccountIcon = By.xpath("//div[@class='headerElement headerElement--login']");
+    private static By myAccountIcon = By.cssSelector(".headerElement__text--login");
 
     public SelenideElement validMyAccount() {
         return $(myAccountIcon);
